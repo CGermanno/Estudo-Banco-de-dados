@@ -19,7 +19,18 @@ class _LoginViewState extends State<LoginView> {
       ),
  
       body: Center(
-        child: Row(
+        child:Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [           
+            // Adicionar a imagem
+            Image.asset(
+              'lib/imagens/a1.jpg',
+              width: 200,
+              height: 200,
+            ),
+         SizedBox(height: 20),
+            
+         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
  
@@ -39,8 +50,8 @@ class _LoginViewState extends State<LoginView> {
                 //
               },
               child: Text('Voltar'),
- 
- 
+                ),
+              ],
             ),
           ],
         ),
