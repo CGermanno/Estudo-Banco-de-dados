@@ -9,7 +9,10 @@ class LoginView extends StatefulWidget {
   State<LoginView> createState() => _LoginViewState();
 }
 
-/// tetse
+/// variaveis
+var txtValor1 = TextEditingController();
+var txtValor2 = TextEditingController();
+
 class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
@@ -19,19 +22,56 @@ class _LoginViewState extends State<LoginView> {
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 158, 211, 254),
       ),
-      body: Center(
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(50, 0.01, 50, 200),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              margin: ,
-              // Adicionar a imagem
-              child: Image.asset(
-                'lib/imagens/a1.jpg',
-                width: 200,
-                height: 200,
+            // Adicionar imagem posteriormente
+            Icon(
+              Icons.person,
+              size: 200,
+            ),
+
+            //
+            // CAMPO DE TEXTO
+            //
+
+            TextFormField(
+              controller: txtValor1,
+              style: TextStyle(fontSize: 20),
+              decoration: InputDecoration(
+                labelText: 'Login',
+                border: OutlineInputBorder(),
+                prefixIcon: Icon(Icons.person_4),
               ),
             ),
+            SizedBox(height: 10),
+
+            TextFormField(
+              controller: txtValor2,
+
+              style: TextStyle(fontSize: 20),
+              decoration: InputDecoration(
+                labelText: 'Senha',
+                border: OutlineInputBorder(),
+                prefixIcon: Icon(Icons.person_4),
+              ),
+              //
+              // VALIDAÇÃO
+              //
+              validator: (value) {
+                if (value == null) {
+                  return 'Informe o usuario';
+                } else if (value.isEmpty) {
+                  return 'Vazio, informar dados';
+                }
+
+                //Retornar null significa sucesso na validação
+                return null;
+              },
+            ),
+
             SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -44,6 +84,10 @@ class _LoginViewState extends State<LoginView> {
                   },
                   child: Text('Logar'),
                 ),
+                
+                //espacinho
+                SizedBox(width: 20),
+
                 OutlinedButton(
                   onPressed: () {
                     //
