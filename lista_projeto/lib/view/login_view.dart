@@ -21,17 +21,34 @@ class _LoginViewState extends State<LoginView> {
         title: Text('Login'),
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 158, 211, 254),
-      ),
-      body: Padding(
+      ),//a
+
+      
+      body:
+       Padding(
         padding: EdgeInsets.fromLTRB(50, 0.01, 50, 200),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Adicionar imagem posteriormente
-            Icon(
-              Icons.person,
-              size: 200,
+
+            Image.asset('assets/imagens/wab.jpg'),
+
+
+            Container(
+              width: 200,
+              height: 200,
+              decoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+                border:
+                    Border.all(width: 1, color: Colors.grey), // borda opcional
+              ),
+              child: Icon(
+                Icons.person,
+                size: 200,
+                color: Colors.grey, // cor do icone
+              ),
             ),
+            SizedBox(height: 20),
 
             //
             // CAMPO DE TEXTO
@@ -39,7 +56,7 @@ class _LoginViewState extends State<LoginView> {
 
             TextFormField(
               controller: txtValor1,
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 15),
               decoration: InputDecoration(
                 labelText: 'Login',
                 border: OutlineInputBorder(),
@@ -51,12 +68,13 @@ class _LoginViewState extends State<LoginView> {
             TextFormField(
               controller: txtValor2,
 
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 15),
               decoration: InputDecoration(
                 labelText: 'Senha',
                 border: OutlineInputBorder(),
-                prefixIcon: Icon(Icons.person_4),
+                prefixIcon: Icon(Icons.key),
               ),
+
               //
               // VALIDAÇÃO
               //
@@ -84,7 +102,7 @@ class _LoginViewState extends State<LoginView> {
                   },
                   child: Text('Logar'),
                 ),
-                
+
                 //espacinho
                 SizedBox(width: 20),
 
