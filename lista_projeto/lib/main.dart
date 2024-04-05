@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'view/login_view.dart';
 import 'view/login_2.dart';
 import 'view/login_efetuado.dart';
-//import 'view/nova_Senha.dart';
+import 'view/nova_senha.dart';
 
 
 void main() {
@@ -33,8 +33,8 @@ class MainApp extends StatelessWidget {
         'login': (context) => LoginView(),
         't2':(context) => Tela2View(),
         'logado':(context) => Tela3View(),
-        //'login': (context) => LoginView(),
-        //'login': (context) => LoginView(),
+        'novaSenha': (context) => Tela4View(),
+        //'login': (context) => Tela5View(),
       },
     );
   }

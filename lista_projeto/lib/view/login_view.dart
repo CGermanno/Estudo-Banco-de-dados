@@ -173,7 +173,11 @@ class _LoginViewState extends State<LoginView> {
                 children: [
                   TextButton(
                     onPressed: () {
-                      // Adicione aqui para redefinir a senha
+                      // botao logar
+                      Navigator.pushNamed(
+                        context,
+                        'novaSenha',
+                      );
                     },
                     child: const Text('Esqueci minha senha'),
                   ),

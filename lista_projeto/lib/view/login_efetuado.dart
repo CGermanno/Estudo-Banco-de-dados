@@ -14,7 +14,7 @@ class _Tela3ViewState extends State<Tela3View> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tela 3'),
+        title: Text('Olá, *USER*'),
       ),
       body: Center(
         child: Row(
