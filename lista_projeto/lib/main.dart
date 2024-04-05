@@ -1,11 +1,16 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace
+
+
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
-import 'view/login_view.dart';
-//import 'view/login_view.dart';
 
-///teste
+import 'view/login_view.dart';
+import 'view/login_2.dart';
+import 'view/login_efetuado.dart';
+//import 'view/nova_Senha.dart';
+
+
 void main() {
   runApp(
     DevicePreview(
@@ -26,6 +31,10 @@ class MainApp extends StatelessWidget {
       initialRoute: 'login',
       routes: {
         'login': (context) => LoginView(),
+        't2':(context) => Tela2View(),
+        'logado':(context) => Tela3View(),
+        //'login': (context) => LoginView(),
+        //'login': (context) => LoginView(),
       },
     );
   }

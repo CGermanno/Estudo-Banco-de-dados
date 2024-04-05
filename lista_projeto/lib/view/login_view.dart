@@ -1,4 +1,5 @@
 // ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class LoginView extends StatefulWidget {
@@ -19,13 +20,19 @@ class _LoginViewState extends State<LoginView> {
       appBar: AppBar(
         title: const Text('Login'),
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 60, 72, 249),
+        backgroundColor: Color.fromARGB(255, 107, 168, 233), // Azul claro
       ),
       body: Container(
         decoration: BoxDecoration(
-          image: DecorationImage(
-            image: const AssetImage('assets/waa.PNG'),
-            fit: BoxFit.cover,
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            // ignore: prefer_const_literals_to_create_immutables
+            colors: [
+              Color.fromARGB(255, 107, 168, 233), // Azul claro
+              Color(0xFFE0E0E0), // Cinza claro
+            ],
+            stops: [0.3, 1.0],
           ),
         ),
         child: Padding(
@@ -41,7 +48,7 @@ class _LoginViewState extends State<LoginView> {
                   border: Border.all(width: 1, color: Colors.grey),
                 ),
                 child: Container(
-                  color: Colors.white, // Cor de fundo do ícone
+                  color: Colors.white, // Cor de fundo
 
                   child: Align(
                     alignment: Alignment.center,
@@ -53,6 +60,7 @@ class _LoginViewState extends State<LoginView> {
                   ),
                 ),
               ),
+
               const SizedBox(height: 20),
 
               // CAMPO DE TEXTO
@@ -99,21 +107,62 @@ class _LoginViewState extends State<LoginView> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  OutlinedButton(
+
+
+                  //Btn_Logar
+                  ElevatedButton(
                     onPressed: () {
                       // botao logar
+                      Navigator.pushNamed(
+                        context,
+                        'logado',
+                      );
                     },
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          Colors.white), // Define a cor de fundo como branco
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              18.0), // Define a forma do botão
+                        ),
+                      ),
+                    ),
                     child: const Text('Logar'),
                   ),
+
+
+
+
+
 
                   //espacinho
                   const SizedBox(width: 20),
 
-                  OutlinedButton(
+
+
+
+
+                  //Btn_Criar Conta
+                  ElevatedButton(
                     onPressed: () {
-                      // botao voltar
+                      // botao logar
+                      Navigator.pushNamed(
+                        context,
+                        't2',
+                      );
                     },
-                    child: const Text('Voltar'),
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.white),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              18.0), // Define a forma do botão
+                        ),
+                      ),
+                    ),
+                    child: const Text('Criar'),
                   ),
                 ],
               ),
