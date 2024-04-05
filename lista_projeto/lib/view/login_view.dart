@@ -166,6 +166,19 @@ class _LoginViewState extends State<LoginView> {
                   ),
                 ],
               ),
+              
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      // Adicione aqui para redefinir a senha
+                    },
+                    child: const Text('Esqueci minha senha'),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
