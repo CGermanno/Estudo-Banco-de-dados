@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+//ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
 
@@ -9,34 +9,29 @@ class LoginView extends StatefulWidget {
   State<LoginView> createState() => _LoginViewState();
 }
 
-/// variaveis
-final txtValor1 = TextEditingController();
-final txtValor2 = TextEditingController();
+
 
 class _LoginViewState extends State<LoginView> {
+
+/// variaveis para armazenar nome e senha
+final TextEditingController seunome = TextEditingController();
+final TextEditingController senha = TextEditingController();
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Login'),
         centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 107, 168, 233), // Azul claro
+        backgroundColor: Colors.grey[300],
       ),
       body: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            // ignore: prefer_const_literals_to_create_immutables
-            colors: [
-              Color.fromARGB(255, 107, 168, 233), // Azul claro
-              Color(0xFFE0E0E0), // Cinza claro
-            ],
-            stops: [0.3, 1.0],
-          ),
+          color: Colors.grey[300], // Define o fundo como Cinza claro
         ),
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(50, 0.01, 50, 200),
+          padding: const EdgeInsets.fromLTRB(50, 10, 50, 50),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -54,7 +49,7 @@ class _LoginViewState extends State<LoginView> {
                     alignment: Alignment.center,
                     child: const Icon(
                       Icons.person,
-                      size: 200,
+                      size: 180,
                       color: Colors.grey,
                     ),
                   ),
@@ -65,7 +60,7 @@ class _LoginViewState extends State<LoginView> {
 
               // CAMPO DE TEXTO
               TextFormField(
-                controller: txtValor1,
+                controller: seunome,
                 style: const TextStyle(fontSize: 15),
                 decoration: InputDecoration(
                   labelText: 'Login',
@@ -77,10 +72,11 @@ class _LoginViewState extends State<LoginView> {
                   prefixIcon: const Icon(Icons.person_4),
                 ),
               ),
+
               const SizedBox(height: 10),
 
               TextFormField(
-                controller: txtValor2,
+                controller: senha,
                 style: const TextStyle(fontSize: 15),
                 decoration: InputDecoration(
                   labelText: 'Senha',
@@ -103,21 +99,46 @@ class _LoginViewState extends State<LoginView> {
                 },
               ),
 
+              //Esqueceu a senha? Recuperar senha
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 1.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    TextButton(
+                      // Usando TextButton em vez de Text
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          'novaSenha',
+                        );
+                      },
+                      child: Text(
+                        'Esqueceu Sua Senha?',
+                        style: TextStyle(color: Colors.grey[600]),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
               const SizedBox(height: 20),
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
 
-
                   //Btn_Logar
                   ElevatedButton(
                     onPressed: () {
-                      // botao logar
+                      var nome = seunome.text;
                       Navigator.pushNamed(
                         context,
                         'logado',
+                        arguments: nome,
                       );
                     },
+
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
                           Colors.white), // Define a cor de fundo como branco
@@ -131,17 +152,8 @@ class _LoginViewState extends State<LoginView> {
                     child: const Text('Logar'),
                   ),
 
-
-
-
-
-
                   //espacinho
                   const SizedBox(width: 20),
-
-
-
-
 
                   //Btn_Criar Conta
                   ElevatedButton(
@@ -166,23 +178,63 @@ class _LoginViewState extends State<LoginView> {
                   ),
                 ],
               ),
-              
-              const SizedBox(height: 20),
+
+              const SizedBox(height: 5),
+
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TextButton(
-                    onPressed: () {
-                      // botao logar
-                      Navigator.pushNamed(
-                        context,
-                        'novaSenha',
-                      );
-                    },
-                    child: const Text('Esqueci minha senha'),
+                  Expanded(
+                    child: Divider(
+                      thickness: 2,
+                      color: Colors.grey[30],
+                    ),
+                  ),
+                  Text('Ou Acesse Com'),
+                  Expanded(
+                    child: Divider(
+                      thickness: 2,
+                      color: Colors.grey[30],
+                    ),
                   ),
                 ],
               ),
+
+
+              const SizedBox(height: 20),
+
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 70,
+                    height: 70,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(width: 1, color: Colors.grey),
+                    ),
+                    child: ClipOval(
+                      child: Image.asset('assets/face.png'),
+                    ),
+                  ),
+
+
+                  const SizedBox(width: 20),
+
+
+                  Container(
+                    width: 70,
+                    height: 70,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(width: 1, color: Colors.grey),
+                    ),
+                    child: ClipOval(
+                      child: Image.asset('assets/goog.png'),
+                    ),
+                  ),
+                ],
+              )
             ],
           ),
         ),
