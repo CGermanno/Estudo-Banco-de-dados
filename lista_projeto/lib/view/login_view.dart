@@ -9,14 +9,10 @@ class LoginView extends StatefulWidget {
   State<LoginView> createState() => _LoginViewState();
 }
 
-
-
 class _LoginViewState extends State<LoginView> {
-
-/// variaveis para armazenar nome e senha
-final TextEditingController seunome = TextEditingController();
-final TextEditingController senha = TextEditingController();
-
+  /// variaveis para armazenar nome e senha
+  final TextEditingController seunome = TextEditingController();
+  final TextEditingController senha = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +31,8 @@ final TextEditingController senha = TextEditingController();
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+
+              
               Container(
                 width: 200,
                 height: 200,
@@ -127,7 +125,6 @@ final TextEditingController senha = TextEditingController();
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-
                   //Btn_Logar
                   ElevatedButton(
                     onPressed: () {
@@ -138,7 +135,6 @@ final TextEditingController senha = TextEditingController();
                         arguments: nome,
                       );
                     },
-
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
                           Colors.white), // Define a cor de fundo como branco
@@ -199,9 +195,7 @@ final TextEditingController senha = TextEditingController();
                 ],
               ),
 
-
               const SizedBox(height: 20),
-
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -217,12 +211,9 @@ final TextEditingController senha = TextEditingController();
                       child: Image.asset('assets/face.png'),
                     ),
                   ),
-
-
                   const SizedBox(width: 20),
-
-
                   Container(
+                    
                     width: 70,
                     height: 70,
                     decoration: BoxDecoration(
@@ -233,6 +224,22 @@ final TextEditingController senha = TextEditingController();
                       child: Image.asset('assets/goog.png'),
                     ),
                   ),
+                ],
+              ),
+                  const SizedBox(height: 40),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                
+                children: [IconButton(
+                  onPressed: () {
+                      Navigator.pushNamed(
+                        context,
+                        'sobre',
+                      );
+                  },
+                  icon: Icon(Icons.info),
+                ),
+                Text('Sobre'),
                 ],
               )
             ],

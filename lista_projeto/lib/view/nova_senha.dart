@@ -29,6 +29,7 @@ class _Tela3ViewState extends State<Tela4View> {
         child: Padding(
           padding: const EdgeInsets.fromLTRB(50, 10, 50, 50),
           child: Column(
+            //
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
@@ -47,7 +48,24 @@ class _Tela3ViewState extends State<Tela4View> {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+
+              const SizedBox(height: 10),
+
+              TextFormField(
+                controller: txtValor3,
+                style: const TextStyle(fontSize: 15),
+                decoration: InputDecoration(
+                  labelText: 'E-mail de cadastro',
+
+                  filled: true, // Define como preenchido
+                  fillColor: Colors
+                      .white, // Cor de preenchimento                  
+                  border: OutlineInputBorder(),
+                  prefixIcon: const Icon(Icons.person_4),
+                ),
+              ),
+
+              const SizedBox(height: 10),
 
               // CAMPO DE TEXTO
               TextFormField(
@@ -131,6 +149,7 @@ class _Tela3ViewState extends State<Tela4View> {
                 ),
               ),
             ],
+            //
           ),
         ),
       ),

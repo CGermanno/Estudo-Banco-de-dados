@@ -9,6 +9,7 @@ import 'view/login_view.dart';
 import 'view/login_2.dart';
 import 'view/login_efetuado.dart';
 import 'view/nova_senha.dart';
+import 'view/sobre.dart';
 
 
 void main() {
@@ -34,7 +35,8 @@ class MainApp extends StatelessWidget {
         't2':(context) => Tela2View(),
         'logado':(context) => Tela3View(),
         'novaSenha': (context) => Tela4View(),
-        //'login': (context) => Tela5View(),
+        'sobre': (context) => Tela5View(),
+
       },
     );
   }
