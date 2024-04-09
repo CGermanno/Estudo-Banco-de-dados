@@ -22,7 +22,7 @@ class _Tela3ViewState extends State<Tela3View> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Olá, ${nome ?? ''}!'),
+        title: Text('Olá, ${nome ?? ''}'),
         backgroundColor: Colors.grey[300],
       ),
       body: Container(
@@ -34,32 +34,33 @@ class _Tela3ViewState extends State<Tela3View> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-
-
               // Lista de Compras
               Expanded(
-                child: ListView.builder(
-                  itemCount: listaDeCompras.length,
-                  itemBuilder: (context, index) {
-                    return ListTile(
-                      title: Text(listaDeCompras[index]),
-                      trailing: IconButton(
-                        icon: Icon(Icons.delete),       //Deletar da lista
-                        onPressed: () {
-                          setState(() {
-                            listaDeCompras.removeAt(index);
-                          });
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: listaDeCompras.length,
+                        itemBuilder: (context, index) {
+                          return ListTile(
+                            title: Text(listaDeCompras[index]),
+                            trailing: IconButton(
+                              icon: Icon(Icons.delete),
+                              onPressed: () {
+                                setState(() {
+                                  listaDeCompras.removeAt(index);
+                                });
+                              },
+                            ),
+                          );
                         },
                       ),
-                    );
-                  },
+                    ],
+                  ),
                 ),
               ),
-
-
               SizedBox(height: 20),
-
-
               // Campo de entrada de texto para adicionar itens
               TextField(
                 controller: itemController,
@@ -67,10 +68,8 @@ class _Tela3ViewState extends State<Tela3View> {
                   labelText: 'Novo item para comprar',
                 ),
               ),
-
               SizedBox(height: 10),
-
-              // Botão para adicionar o item
+              // Botão para adicionar o item à lista
               ElevatedButton(
                 onPressed: () {
                   setState(() {
@@ -92,11 +91,7 @@ class _Tela3ViewState extends State<Tela3View> {
                   style: TextStyle(color: Colors.grey[600]),
                 ),
               ),
-
-
               SizedBox(height: 20),
-
-
               // Botão para limpar a lista
               ElevatedButton(
                 onPressed: () {
