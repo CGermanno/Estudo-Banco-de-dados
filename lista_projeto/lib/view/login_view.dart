@@ -230,7 +230,9 @@ class _LoginViewState extends State<LoginView> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 
-                children: [IconButton(
+                children: [
+                  
+                  IconButton(
                   onPressed: () {
                       Navigator.pushNamed(
                         context,
