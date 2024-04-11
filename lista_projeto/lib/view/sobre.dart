@@ -33,8 +33,7 @@ class _Tela5ViewState extends State<Tela5View> {
             
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-
-
+              
             Text(
               'Tema Escolhido:',
               style: TextStyle(

@@ -27,7 +27,7 @@ class _Tela3ViewState extends State<Tela3View> {
           color: Colors.grey[300], // Define o fundo como Cinza claro
         ),
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(50, 10, 50, 50),
+          padding: const EdgeInsets.fromLTRB(20, 10, 20, 50),
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -39,16 +39,25 @@ class _Tela3ViewState extends State<Tela3View> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        IconButton(
-                          onPressed: () {
-                            Navigator.pushNamed(
-                              context,
-                              'lista_1',
-                            );
-                          },
-                          icon: Icon(Icons.info),
-                          iconSize: 40,
-                        ),
+
+
+    GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          'lisa1_1',
+        );
+      },
+      child: ClipOval(
+        child: SizedBox(
+          width: 60, // largura desejada
+          height: 60, // altura desejada
+          child: Image.asset('assets/notass.png'),
+        ),
+      ),
+    ),
+    
+                        
                         const SizedBox(width: 150),
                         const SizedBox(height: 150),
                         IconButton(
