@@ -1,7 +1,7 @@
 
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-//output
+
 
 import 'package:flutter/material.dart';
 
@@ -16,6 +16,7 @@ class _Tela11ViewState extends State<Tela11View> {
   List<String> listaDeCompras = [];
   final TextEditingController itemController = TextEditingController();
   String nomeDaLista = 'Lista 01';
+  
   List<bool> isCheckedList = [];
 
   void _mostrarDialogo() {
@@ -35,9 +36,9 @@ class _Tela11ViewState extends State<Tela11View> {
           actions: <Widget>[
             TextButton(
               onPressed: () {
-
-
-                // Aqui você pode adicionar a lógica para salvar o novo nome
+                
+                //nomeDaLista = 'Lista 01';
+                //lógica para salvar o novo nome pendente..
 
 
                 Navigator.of(context).pop();
@@ -111,7 +112,7 @@ class _Tela11ViewState extends State<Tela11View> {
                 ),
               ),
               SizedBox(height: 20),
-              // Campo de entrada de texto para adicionar itens
+              // Campo de entrada de texto
               TextField(
                 controller: itemController,
                 decoration: InputDecoration(
@@ -119,7 +120,7 @@ class _Tela11ViewState extends State<Tela11View> {
                 ),
               ),
               SizedBox(height: 10),
-              // Botão para adicionar o item à lista
+              // dicionar o item à lista
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -136,16 +137,18 @@ class _Tela11ViewState extends State<Tela11View> {
                       });
                     },
                     style: ButtonStyle(
+                                            foregroundColor: MaterialStateProperty.all<Color>(
+                          Colors.black),
                       backgroundColor: MaterialStateProperty.all<Color>(
-                          Colors.white), // Define a cor de fundo como branco
+                          Colors.white), // cor de fundo como branco
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(
-                              18.0), // Define a forma do botão
+                              18.0), // forma do botão
                         ),
                       ),
                     ),
-                    child: const Text('Adicionar'),
+                    child: const Text('Adicionar',style: TextStyle(color: Colors.black),),
                   ),
 
                   SizedBox(width: 20),
@@ -159,16 +162,18 @@ class _Tela11ViewState extends State<Tela11View> {
                       });
                     },
                     style: ButtonStyle(
+                      foregroundColor: MaterialStateProperty.all<Color>(
+                          Colors.black),
                       backgroundColor: MaterialStateProperty.all<Color>(
-                          Colors.white), // Define a cor de fundo como branco
+                          Colors.white), //cor fundo
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(
-                              18.0), // Define a forma do botão
+                              18.0), 
                         ),
                       ),
                     ),
-                    child: const Text('Limpar'),
+                    child: const Text('Limpar',style: TextStyle(color: Colors.black),),
                   ),
                 ],
               ),

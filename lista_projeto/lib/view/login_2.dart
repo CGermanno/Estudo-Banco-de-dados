@@ -13,11 +13,12 @@ class _Tela2ViewState extends State<Tela2View> {
   TextEditingController nomeController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController senhaController = TextEditingController();
+  final TextEditingController seunome2 = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar( 
+      appBar: AppBar(
         title: Text('Cadastro de Usuário'),
         centerTitle: true,
         backgroundColor: Colors.grey[300],
@@ -50,16 +51,10 @@ class _Tela2ViewState extends State<Tela2View> {
                   ),
                 ),
               ),
-
-
-
               const SizedBox(height: 20),
-
-
-              
               TextFormField(
                 style: const TextStyle(fontSize: 15),
-                controller: nomeController,
+                controller: seunome2,
                 decoration: InputDecoration(
                     labelText: 'Nome',
                     prefixIcon: Icon(Icons.person),
@@ -67,11 +62,7 @@ class _Tela2ViewState extends State<Tela2View> {
                     filled: true, // Define como preenchido
                     fillColor: Colors.white),
               ),
-
-
               SizedBox(height: 5),
-
-
               TextFormField(
                 style: const TextStyle(fontSize: 15),
                 controller: emailController,
@@ -83,11 +74,7 @@ class _Tela2ViewState extends State<Tela2View> {
                     filled: true, // Define como preenchido
                     fillColor: Colors.white),
               ),
-
-
               SizedBox(height: 5),
-
-
               TextFormField(
                 style: const TextStyle(fontSize: 15),
                 controller: senhaController,
@@ -99,20 +86,18 @@ class _Tela2ViewState extends State<Tela2View> {
                     filled: true, // Define como preenchido
                     fillColor: Colors.white),
               ),
-
-
               SizedBox(height: 20),
-
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   OutlinedButton(
                     onPressed: () {
+                      var nome2 = seunome2.text;
                       // botao Cadastrar
                       Navigator.pushNamed(
                         context,
                         'logado',
+                        arguments: nome2,
                       );
                     },
                     style: ButtonStyle(
@@ -127,11 +112,7 @@ class _Tela2ViewState extends State<Tela2View> {
                     ),
                     child: Text('Cadastrar'),
                   ),
-
-
                   SizedBox(width: 20),
-
-
                   OutlinedButton(
                     onPressed: () {
                       // botao Cadastrar

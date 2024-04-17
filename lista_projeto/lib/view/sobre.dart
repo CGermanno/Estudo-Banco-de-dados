@@ -1,4 +1,3 @@
-
 //ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
@@ -21,75 +20,71 @@ class _Tela5ViewState extends State<Tela5View> {
         title: const Text('Sobre o APP.'),
         backgroundColor: Colors.grey[300],
       ),
-
       body: Container(
         decoration: BoxDecoration(
-          color: Colors.grey[300], // Define o fundo como Cinza claro
+          color: Colors.grey[300], // Cinza claro
         ),
-
         child: Padding(
           padding: const EdgeInsets.fromLTRB(40, 50, 10, 50),
           child: Column(
-            
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              
-            Text(
-              'Tema Escolhido:',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Text(
-              'Lista de Compra Simples',
-              style: TextStyle(fontSize: 18),
-            ),
-            SizedBox(height: 40),
-            Text(
-              'Objetivo do Aplicativo:',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Text(
-              'Proporcionar uma lista de compras móvel',
-              style: TextStyle(fontSize: 18),
-            ),
-            SizedBox(height: 40),
-            Text(
-              'Desenvolvedor:',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Text(
-              'Carlos Germano Gasaprelho de Souza',
-              style: TextStyle(fontSize: 18),
-            ),
-
-            SizedBox(height: 40),
-
-            Row(
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                  Navigator.pushNamed(
-                    context,
-                    'login',
-                  );
-                  },
-                  child: Text('Voltar'),
+              Text(
+                'Tema Escolhido:',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
                 ),
-              ],
-            ),
-          ],
+              ),
+              Text(
+                'Lista de Compra Simples',
+                style: TextStyle(fontSize: 18),
+              ),
+              SizedBox(height: 40),
+              Text(
+                'Objetivo do Aplicativo:',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Text(
+                'Proporcionar uma lista de compras móvel',
+                style: TextStyle(fontSize: 18),
+              ),
+              SizedBox(height: 40),
+              Text(
+                'Desenvolvedor:',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Text(
+                'Carlos Germano Gasaprelho de Souza',
+                style: TextStyle(fontSize: 18),
+              ),
+              SizedBox(height: 40),
+              Row(
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(
+                        context,
+                        'login',
+                      );
+                    },
+                    child: Text(
+                      'Voltar',
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
-    ),
     );
-    
   }
 }

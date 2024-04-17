@@ -1,4 +1,3 @@
-
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 //output
@@ -33,10 +32,10 @@ class _Tela44ViewState extends State<Tela44View> {
             },
           ),
           actions: <Widget>[
-
             TextButton(
               onPressed: () {
-                // Aqui você pode adicionar a lógica para salvar o novo nome
+                //  lógica para salvar o novo nome
+
                 Navigator.of(context).pop();
               },
               child: Text('Salvar'),
@@ -52,7 +51,7 @@ class _Tela44ViewState extends State<Tela44View> {
     return Scaffold(
       appBar: AppBar(
         title: Text(nomeDaLista),
-        backgroundColor: Colors.yellow[300],
+        backgroundColor: Colors.blue[100],
         actions: [
           IconButton(
             icon: Icon(Icons.edit),
@@ -64,7 +63,7 @@ class _Tela44ViewState extends State<Tela44View> {
       ),
       body: Container(
         decoration: BoxDecoration(
-          color: Colors.yellow[300], // Define cor fundo
+          color: Colors.blue[100], // Define cor fundo
         ),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(50, 10, 50, 50),
@@ -75,9 +74,7 @@ class _Tela44ViewState extends State<Tela44View> {
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(
-                    
                     children: List.generate(listaDeCompras.length, (index) {
-                      
                       return ListTile(
                         title: Row(
                           children: [
@@ -92,7 +89,6 @@ class _Tela44ViewState extends State<Tela44View> {
                             Text(listaDeCompras[index]),
                           ],
                         ),
-                        
                         trailing: IconButton(
                           icon: Icon(Icons.delete),
                           onPressed: () {
@@ -112,7 +108,7 @@ class _Tela44ViewState extends State<Tela44View> {
               TextField(
                 controller: itemController,
                 decoration: InputDecoration(
-                  labelText: 'Novo item para comprar',  
+                  labelText: 'Novo item para comprar',
                 ),
               ),
               SizedBox(height: 10),
@@ -120,20 +116,15 @@ class _Tela44ViewState extends State<Tela44View> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-
-
-
-                  // Botão ADD                 
+                  // Botão ADD
                   ElevatedButton(
                     onPressed: () {
                       setState(() {
-
                         listaDeCompras.add(itemController.text);
                         isCheckedList.add(false);
                         itemController.clear(); // Limpa o campo de texto
                       });
                     },
-
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
                           Colors.white), // Define a cor de fundo como branco
@@ -144,7 +135,7 @@ class _Tela44ViewState extends State<Tela44View> {
                         ),
                       ),
                     ),
-                    child: const Text('Adicionar'),
+                    child: const Text('Adicionar',style: TextStyle(color: Colors.black),),
                   ),
 
                   SizedBox(width: 20),
@@ -158,19 +149,19 @@ class _Tela44ViewState extends State<Tela44View> {
                       });
                     },
                     style: ButtonStyle(
+                      foregroundColor: MaterialStateProperty.all<Color>(
+                          Colors.black),
                       backgroundColor: MaterialStateProperty.all<Color>(
-                          Colors.white), // Define a cor de fundo como branco
+                          Colors.white), //cor fundo
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(
-                              18.0), // Define a forma do botão
+                              18.0), 
                         ),
                       ),
                     ),
-                    child: const Text('Limpar'),
+                    child: const Text('Limpar',style: TextStyle(color: Colors.black),),
                   ),
-
-
                 ],
               ),
             ],

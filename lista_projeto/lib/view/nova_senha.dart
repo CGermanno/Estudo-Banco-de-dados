@@ -58,8 +58,7 @@ class _Tela3ViewState extends State<Tela4View> {
                   labelText: 'E-mail de cadastro',
 
                   filled: true, // Define como preenchido
-                  fillColor: Colors
-                      .white, // Cor de preenchimento                  
+                  fillColor: Colors.white, // Cor de preenchimento
                   border: OutlineInputBorder(),
                   prefixIcon: const Icon(Icons.person_4),
                 ),

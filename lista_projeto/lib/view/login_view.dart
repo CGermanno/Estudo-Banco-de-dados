@@ -31,8 +31,6 @@ class _LoginViewState extends State<LoginView> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-
-              
               Container(
                 width: 200,
                 height: 200,
@@ -59,7 +57,7 @@ class _LoginViewState extends State<LoginView> {
               // CAMPO DE TEXTO
               TextFormField(
                 controller: seunome,
-                style: const TextStyle(fontSize: 15),
+                style: const TextStyle(color: Colors.black, fontSize: 15),
                 decoration: InputDecoration(
                   labelText: 'Usuario',
 
@@ -75,7 +73,7 @@ class _LoginViewState extends State<LoginView> {
 
               TextFormField(
                 controller: senha,
-                style: const TextStyle(fontSize: 15),
+                style: const TextStyle(color: Colors.black, fontSize: 15),
                 decoration: InputDecoration(
                   labelText: 'Senha',
                   border: OutlineInputBorder(),
@@ -136,6 +134,8 @@ class _LoginViewState extends State<LoginView> {
                       );
                     },
                     style: ButtonStyle(
+                      foregroundColor:
+                          MaterialStateProperty.all<Color>(Colors.black),
                       backgroundColor: MaterialStateProperty.all<Color>(
                           Colors.white), // Define a cor de fundo como branco
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -161,6 +161,8 @@ class _LoginViewState extends State<LoginView> {
                       );
                     },
                     style: ButtonStyle(
+                      foregroundColor:
+                          MaterialStateProperty.all<Color>(Colors.black),
                       backgroundColor:
                           MaterialStateProperty.all<Color>(Colors.white),
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -213,7 +215,6 @@ class _LoginViewState extends State<LoginView> {
                   ),
                   const SizedBox(width: 20),
                   Container(
-                    
                     width: 70,
                     height: 70,
                     decoration: BoxDecoration(
@@ -226,22 +227,20 @@ class _LoginViewState extends State<LoginView> {
                   ),
                 ],
               ),
-                  const SizedBox(height: 40),
+              const SizedBox(height: 40),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
-                
                 children: [
-                  
                   IconButton(
-                  onPressed: () {
+                    onPressed: () {
                       Navigator.pushNamed(
                         context,
                         'sobre',
                       );
-                  },
-                  icon: Icon(Icons.info),
-                ),
-                Text('Sobre'),
+                    },
+                    icon: Icon(Icons.info),
+                  ),
+                  Text('Sobre'),
                 ],
               )
             ],
