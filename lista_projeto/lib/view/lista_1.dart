@@ -9,25 +9,61 @@ class Tela11View extends StatefulWidget {
   const Tela11View({Key? key}) : super(key: key);
 
   @override
-  State<Tela11View> createState() => _Tela3ViewState();
+  State<Tela11View> createState() => _Tela11ViewState();
 }
 
-class _Tela3ViewState extends State<Tela11View> {
+class _Tela11ViewState extends State<Tela11View> {
   List<String> listaDeCompras = [];
   final TextEditingController itemController = TextEditingController();
+  String nomeDaLista = 'Lista 01';
+  List<bool> isCheckedList = [];
+
+  void _mostrarDialogo() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Editar Nome da Lista'),
+          content: TextField(
+            controller: TextEditingController(text: nomeDaLista),
+            onChanged: (newValue) {
+              setState(() {
+                nomeDaLista = newValue;
+              });
+            },
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                // Aqui você pode adicionar a lógica para salvar o novo nome
+                Navigator.of(context).pop();
+              },
+              child: Text('Salvar'),
+            ),
+          ],
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    final nome = ModalRoute.of(context)!.settings.arguments;
-
     return Scaffold(
       appBar: AppBar(
-        title: Text('Olá, ${nome ?? ''}'),
-        backgroundColor: Colors.grey[300],
+        title: Text(nomeDaLista),
+        backgroundColor: Colors.yellow[300],
+        actions: [
+          IconButton(
+            icon: Icon(Icons.edit),
+            onPressed: () {
+              _mostrarDialogo();
+            },
+          ),
+        ],
       ),
       body: Container(
         decoration: BoxDecoration(
-          color: Colors.grey[300], // Define o fundo como Cinza claro
+          color: Colors.yellow[300], // Define o fundo como Cinza claro
         ),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(50, 10, 50, 50),
@@ -38,25 +74,35 @@ class _Tela3ViewState extends State<Tela11View> {
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(
-                    children: [
-                      ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: listaDeCompras.length,
-                        itemBuilder: (context, index) {
-                          return ListTile(
-                            title: Text(listaDeCompras[index]),
-                            trailing: IconButton(
-                              icon: Icon(Icons.delete),
-                              onPressed: () {
+                    
+                    children: List.generate(listaDeCompras.length, (index) {
+                      
+                      return ListTile(
+                        title: Row(
+                          children: [
+                            Checkbox(
+                              value: isCheckedList[index],
+                              onChanged: (newValue) {
                                 setState(() {
-                                  listaDeCompras.removeAt(index);
+                                  isCheckedList[index] = newValue ?? false;
                                 });
                               },
                             ),
-                          );
-                        },
-                      ),
-                    ],
+                            Text(listaDeCompras[index]),
+                          ],
+                        ),
+                        
+                        trailing: IconButton(
+                          icon: Icon(Icons.delete),
+                          onPressed: () {
+                            setState(() {
+                              listaDeCompras.removeAt(index);
+                              isCheckedList.removeAt(index);
+                            });
+                          },
+                        ),
+                      );
+                    }),
                   ),
                 ),
               ),
@@ -65,7 +111,7 @@ class _Tela3ViewState extends State<Tela11View> {
               TextField(
                 controller: itemController,
                 decoration: InputDecoration(
-                  labelText: 'Novo item para comprar',
+                  labelText: 'Novo item para comprar',  
                 ),
               ),
               SizedBox(height: 10),
@@ -74,18 +120,20 @@ class _Tela3ViewState extends State<Tela11View> {
                 onPressed: () {
                   setState(() {
                     listaDeCompras.add(itemController.text);
+                    isCheckedList.add(false);
                     itemController.clear(); // Limpa o campo de texto
                   });
                 },
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.white),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18.0),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          Colors.white), // Define a cor de fundo como branco
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              18.0), // Define a forma do botão
+                        ),
+                      ),
                     ),
-                  ),
-                ),
                 child: Text(
                   'Adicionar Item',
                   style: TextStyle(color: Colors.grey[600]),
@@ -97,17 +145,19 @@ class _Tela3ViewState extends State<Tela11View> {
                 onPressed: () {
                   setState(() {
                     listaDeCompras.clear();
+                    isCheckedList.clear();
                   });
                 },
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.white),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18.0),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          Colors.white), // Define a cor de fundo como branco
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              18.0), // Define a forma do botão
+                        ),
+                      ),
                     ),
-                  ),
-                ),
                 child: Text(
                   'Limpar Lista',
                   style: TextStyle(color: Colors.grey[600]),

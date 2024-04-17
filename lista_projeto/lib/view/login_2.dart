@@ -17,7 +17,7 @@ class _Tela2ViewState extends State<Tela2View> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar( 
         title: Text('Cadastro de Usuário'),
         centerTitle: true,
         backgroundColor: Colors.grey[300],

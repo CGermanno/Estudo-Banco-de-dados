@@ -45,14 +45,14 @@ class _Tela3ViewState extends State<Tela3View> {
       onTap: () {
         Navigator.pushNamed(
           context,
-          'lisa1_1',
+          'lista_1',
         );
       },
       child: ClipOval(
         child: SizedBox(
-          width: 60, // largura desejada
-          height: 60, // altura desejada
-          child: Image.asset('assets/notass.png'),
+          width: 70, // largura desejada
+          height: 80, // altura desejada
+          child: Image.asset('assets/png11.png'),
         ),
       ),
     ),
@@ -60,100 +60,144 @@ class _Tela3ViewState extends State<Tela3View> {
                         
                         const SizedBox(width: 150),
                         const SizedBox(height: 150),
-                        IconButton(
-                          onPressed: () {
-                            Navigator.pushNamed(
-                              context,
-                              'lista_2',
-                            );
-                          },
-                          icon: Icon(Icons.info),
-                          iconSize: 40,
-                        ),
+
+
+    GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          'lista_2',
+        );
+      },
+      child: ClipOval(
+        child: SizedBox(
+          width: 70, // largura desejada
+          height: 80, // altura desejada
+          child: Image.asset('assets/png22.png'),
+        ),
+      ),
+    ),
+
                       ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        IconButton(
-                          onPressed: () {
-                            Navigator.pushNamed(
-                              context,
-                              'sobre',
-                            );
-                          },
-                          icon: Icon(Icons.info),
-                          iconSize: 40,
-                        ),
+
+
+
+                        
+    GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          'lista_3',
+        );
+      },
+      child: ClipOval(
+        child: SizedBox(
+          width: 70, // largura desejada
+          height: 80, // altura desejada
+          child: Image.asset('assets/png33.png'),
+        ),
+      ),
+    ),
+
                         const SizedBox(width: 150),
                         const SizedBox(height: 150),
-                        IconButton(
-                          onPressed: () {
-                            Navigator.pushNamed(
-                              context,
-                              'lista_3',
-                            );
-                          },
-                          icon: Icon(Icons.info),
-                          iconSize: 40,
-                        ),
+    GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          'lista_4',
+        );
+      },
+      child: ClipOval(
+        child: SizedBox(
+          width: 70, // largura desejada
+          height: 80, // altura desejada
+          child: Image.asset('assets/png44.png'),
+        ),
+      ),
+    ),
                       ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        IconButton(
-                          onPressed: () {
-                            Navigator.pushNamed(
-                              context,
-                              'sobre',
-                            );
-                          },
-                          icon: Icon(Icons.info),
-                          iconSize: 40,
-                        ),
+    GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          'lista_5',
+        );
+      },
+      child: ClipOval(
+        child: SizedBox(
+          width: 70, // largura desejada
+          height: 80, // altura desejada
+          child: Image.asset('assets/png55.png'),
+        ),
+      ),
+    ),
                         const SizedBox(width: 150),
                         const SizedBox(height: 150),
-                        IconButton(
-                          onPressed: () {
-                            Navigator.pushNamed(
-                              context,
-                              'lista_4',
-                            );
-                          },
-                          icon: Icon(Icons.info),
-                          iconSize: 40,
-                        ),
+    GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          'lista_6',
+        );
+      },
+      child: ClipOval(
+        child: SizedBox(
+          width: 70, // largura desejada
+          height: 80, // altura desejada
+          child: Image.asset('assets/png66.png'),
+        ),
+      ),
+    ),
                       ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        IconButton(
-                          onPressed: () {
-                            Navigator.pushNamed(
-                              context,
-                              'lista_5',
-                            );
-                          },
-                          icon: Icon(Icons.info),
-                          iconSize: 40,
-                        ),
+    GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          'lista_7',
+        );
+      },
+      child: ClipOval(
+        child: SizedBox(
+          width: 70, // largura desejada
+          height: 80, // altura desejada
+          child: Image.asset('assets/png77.png'),
+        ),
+      ),
+    ),
                         const SizedBox(width: 150),
                         const SizedBox(height: 150),
-                        IconButton(
-                          onPressed: () {
-                            Navigator.pushNamed(
-                              context,
-                              'lista_6',
-                            );
-                          },
-                          icon: Icon(Icons.info),
-                          iconSize: 40,
-                        ),
+    GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          'lista_8',
+        );
+      },
+      child: ClipOval(
+        child: SizedBox(
+          width: 70, // largura desejada
+          height: 80, // altura desejada
+          child: Image.asset('assets/png88.png'),
+        ),
+      ),
+    ),
                       ],
                     ),
                   ],
+                  
                 )
               ],
             ),

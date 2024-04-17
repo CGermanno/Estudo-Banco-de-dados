@@ -61,7 +61,7 @@ class _LoginViewState extends State<LoginView> {
                 controller: seunome,
                 style: const TextStyle(fontSize: 15),
                 decoration: InputDecoration(
-                  labelText: 'Login',
+                  labelText: 'Usuario',
 
                   filled: true, // Define como preenchido
                   fillColor: Colors

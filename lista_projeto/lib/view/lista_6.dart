@@ -5,17 +5,17 @@
 
 import 'package:flutter/material.dart';
 
-class Tela33View extends StatefulWidget {
-  const Tela33View({Key? key}) : super(key: key);
+class Tela66View extends StatefulWidget {
+  const Tela66View({Key? key}) : super(key: key);
 
   @override
-  State<Tela33View> createState() => _Tela33ViewState();
+  State<Tela66View> createState() => _Tela66ViewState();
 }
 
-class _Tela33ViewState extends State<Tela33View> {
+class _Tela66ViewState extends State<Tela66View> {
   List<String> listaDeCompras = [];
   final TextEditingController itemController = TextEditingController();
-  String nomeDaLista = 'Lista 03';
+  String nomeDaLista = 'Lista 06';
   List<bool> isCheckedList = [];
 
   void _mostrarDialogo() {
