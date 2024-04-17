@@ -52,7 +52,7 @@ class _Tela55ViewState extends State<Tela55View> {
     return Scaffold(
       appBar: AppBar(
         title: Text(nomeDaLista),
-        backgroundColor: Colors.grey[300],
+        backgroundColor: Colors.yellow[300],
         actions: [
           IconButton(
             icon: Icon(Icons.edit),
@@ -64,7 +64,7 @@ class _Tela55ViewState extends State<Tela55View> {
       ),
       body: Container(
         decoration: BoxDecoration(
-          color: Colors.grey[300], // Define o fundo como Cinza claro
+          color: Colors.yellow[300], // Define cor fundo
         ),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(50, 10, 50, 50),
@@ -117,50 +117,61 @@ class _Tela55ViewState extends State<Tela55View> {
               ),
               SizedBox(height: 10),
               // Botão para adicionar o item à lista
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    listaDeCompras.add(itemController.text);
-                    isCheckedList.add(false);
-                    itemController.clear(); // Limpa o campo de texto
-                  });
-                },
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.white),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+
+
+
+                  // Botão ADD                 
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+
+                        listaDeCompras.add(itemController.text);
+                        isCheckedList.add(false);
+                        itemController.clear(); // Limpa o campo de texto
+                      });
+                    },
+
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          Colors.white), // Define a cor de fundo como branco
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              18.0), // Define a forma do botão
+                        ),
+                      ),
                     ),
+                    child: const Text('Adicionar'),
                   ),
-                ),
-                child: Text(
-                  'Adicionar Item',
-                  style: TextStyle(color: Colors.grey[600]),
-                ),
-              ),
-              SizedBox(height: 20),
-              // Botão para limpar a lista
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    listaDeCompras.clear();
-                    isCheckedList.clear();
-                  });
-                },
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.white),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18.0),
+
+                  SizedBox(width: 20),
+
+                  // Botão para limpar a lista                  
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        listaDeCompras.clear();
+                        isCheckedList.clear();
+                      });
+                    },
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          Colors.white), // Define a cor de fundo como branco
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              18.0), // Define a forma do botão
+                        ),
+                      ),
                     ),
+                    child: const Text('Limpar'),
                   ),
-                ),
-                child: Text(
-                  'Limpar Lista',
-                  style: TextStyle(color: Colors.grey[600]),
-                ),
+
+
+                ],
               ),
             ],
           ),

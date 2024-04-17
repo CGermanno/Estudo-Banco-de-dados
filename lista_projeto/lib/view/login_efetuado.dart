@@ -48,17 +48,17 @@ class _Tela3ViewState extends State<Tela3View> {
           'lista_1',
         );
       },
-      child: ClipOval(
+      child: ClipRRect(
         child: SizedBox(
-          width: 70, // largura desejada
-          height: 80, // altura desejada
+          width: 90, // largura 
+          height: 90, // altura 
           child: Image.asset('assets/png11.png'),
         ),
       ),
     ),
     
                         
-                        const SizedBox(width: 150),
+                        const SizedBox(width:  110),
                         const SizedBox(height: 150),
 
 
@@ -69,10 +69,10 @@ class _Tela3ViewState extends State<Tela3View> {
           'lista_2',
         );
       },
-      child: ClipOval(
+      child: ClipRRect(
         child: SizedBox(
-          width: 70, // largura desejada
-          height: 80, // altura desejada
+          width: 99, // largura 
+          height: 90, // altura 
           child: Image.asset('assets/png22.png'),
         ),
       ),
@@ -94,16 +94,16 @@ class _Tela3ViewState extends State<Tela3View> {
           'lista_3',
         );
       },
-      child: ClipOval(
+      child: ClipRRect(
         child: SizedBox(
-          width: 70, // largura desejada
-          height: 80, // altura desejada
+          width: 99, // largura 
+          height: 90, // altura 
           child: Image.asset('assets/png33.png'),
         ),
       ),
     ),
 
-                        const SizedBox(width: 150),
+                        const SizedBox(width:  110),
                         const SizedBox(height: 150),
     GestureDetector(
       onTap: () {
@@ -112,10 +112,10 @@ class _Tela3ViewState extends State<Tela3View> {
           'lista_4',
         );
       },
-      child: ClipOval(
+      child: ClipRRect(
         child: SizedBox(
-          width: 70, // largura desejada
-          height: 80, // altura desejada
+          width: 99, // largura 
+          height: 90, // altura 
           child: Image.asset('assets/png44.png'),
         ),
       ),
@@ -132,16 +132,22 @@ class _Tela3ViewState extends State<Tela3View> {
           'lista_5',
         );
       },
-      child: ClipOval(
+      child: ClipRRect(
         child: SizedBox(
-          width: 70, // largura desejada
-          height: 80, // altura desejada
+          width: 99, // largura 
+          height: 90, // altura 
           child: Image.asset('assets/png55.png'),
         ),
       ),
     ),
-                        const SizedBox(width: 150),
+
+
+
+                        const SizedBox(width:  110),
                         const SizedBox(height: 150),
+
+
+
     GestureDetector(
       onTap: () {
         Navigator.pushNamed(
@@ -149,10 +155,10 @@ class _Tela3ViewState extends State<Tela3View> {
           'lista_6',
         );
       },
-      child: ClipOval(
+      child: ClipRRect(
         child: SizedBox(
-          width: 70, // largura desejada
-          height: 80, // altura desejada
+          width: 99, // largura 
+          height: 90, // altura 
           child: Image.asset('assets/png66.png'),
         ),
       ),
@@ -169,16 +175,22 @@ class _Tela3ViewState extends State<Tela3View> {
           'lista_7',
         );
       },
-      child: ClipOval(
+      child: ClipRRect(
         child: SizedBox(
-          width: 70, // largura desejada
-          height: 80, // altura desejada
+          width: 99, // largura 
+          height: 90, // altura 
           child: Image.asset('assets/png77.png'),
         ),
       ),
     ),
-                        const SizedBox(width: 150),
+
+
+
+                        const SizedBox(width:  110),
                         const SizedBox(height: 150),
+
+
+
     GestureDetector(
       onTap: () {
         Navigator.pushNamed(
@@ -186,10 +198,10 @@ class _Tela3ViewState extends State<Tela3View> {
           'lista_8',
         );
       },
-      child: ClipOval(
+      child: ClipRRect(
         child: SizedBox(
-          width: 70, // largura desejada
-          height: 80, // altura desejada
+          width: 99, // largura 
+          height: 90, // altura 
           child: Image.asset('assets/png88.png'),
         ),
       ),

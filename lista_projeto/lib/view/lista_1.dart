@@ -35,7 +35,11 @@ class _Tela11ViewState extends State<Tela11View> {
           actions: <Widget>[
             TextButton(
               onPressed: () {
+
+
                 // Aqui você pode adicionar a lógica para salvar o novo nome
+
+
                 Navigator.of(context).pop();
               },
               child: Text('Salvar'),
@@ -63,7 +67,7 @@ class _Tela11ViewState extends State<Tela11View> {
       ),
       body: Container(
         decoration: BoxDecoration(
-          color: Colors.yellow[300], // Define o fundo como Cinza claro
+          color: Colors.yellow[300], // Define cor fundo
         ),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(50, 10, 50, 50),
@@ -116,14 +120,21 @@ class _Tela11ViewState extends State<Tela11View> {
               ),
               SizedBox(height: 10),
               // Botão para adicionar o item à lista
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    listaDeCompras.add(itemController.text);
-                    isCheckedList.add(false);
-                    itemController.clear(); // Limpa o campo de texto
-                  });
-                },
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+
+
+
+                  // Botão ADD                 
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        listaDeCompras.add(itemController.text);
+                        isCheckedList.add(false);
+                        itemController.clear(); // Limpa o campo de texto
+                      });
+                    },
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
                           Colors.white), // Define a cor de fundo como branco
@@ -134,20 +145,19 @@ class _Tela11ViewState extends State<Tela11View> {
                         ),
                       ),
                     ),
-                child: Text(
-                  'Adicionar Item',
-                  style: TextStyle(color: Colors.grey[600]),
-                ),
-              ),
-              SizedBox(height: 20),
-              // Botão para limpar a lista
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    listaDeCompras.clear();
-                    isCheckedList.clear();
-                  });
-                },
+                    child: const Text('Adicionar'),
+                  ),
+
+                  SizedBox(width: 20),
+
+                  // Botão para limpar a lista                  
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        listaDeCompras.clear();
+                        isCheckedList.clear();
+                      });
+                    },
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
                           Colors.white), // Define a cor de fundo como branco
@@ -158,10 +168,9 @@ class _Tela11ViewState extends State<Tela11View> {
                         ),
                       ),
                     ),
-                child: Text(
-                  'Limpar Lista',
-                  style: TextStyle(color: Colors.grey[600]),
-                ),
+                    child: const Text('Limpar'),
+                  ),
+                ],
               ),
             ],
           ),
